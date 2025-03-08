@@ -1,7 +1,20 @@
 {% with request.resolver_match.url_name as url_name %}
-<div class="topnav">
+<div style="display:flex; align-items: center; justify-content: space-between;" class="topnav">
+<div style="padding:10px;">
     <a class="{% if url_name == 'books.index' %}active{% endif %}" href="{% url 'books.index' %}">Home</a>
     <a class="{% if url_name == 'books.list_books' %}active{% endif %}" href="{% url 'books.list_books' %}">List Books</a>
     <a class="{% if url_name == 'books.aboutus' %}active{% endif %}" href="{% url 'books.aboutus' %}">About</a>
+
+</div>
+<div>
+    <form action="{% url 'books.search' %}" method="post" style="border: none; padding: 7px; border-radius: 10px; background: #ffffff; margin: 5px;" >
+        {% csrf_token %}
+        <input type="text" name="keyword" placeholder="Enter keyword" style="border: none; background: none;">
+        <input type="checkbox" name="option1" /><label>Title</label>
+        <input type="checkbox" name="option2" /><label>Author</label>
+
+        <button type="submit"  style="border: none; background: none;"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+</div>
 </div>
 {% endwith %}
