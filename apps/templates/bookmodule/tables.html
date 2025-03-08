@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Document</title>
+    <style>
+        td, th, table {
+            border: 1px solid black
+        }
+        .table-container {
+            text-align: center;
+        }
+        .table1, .table2 {
+            margin: auto;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h2>Table 1: Table of Fruits and Their Prices</h2>
+        <table class="table1">
+            <tr>
+                <th>Fruit</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>$0.25</td>
+            </tr>
+            <tr>
+                <td>Orange</td>
+                <td>$0.50</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>$1.00</td>
+            </tr>
+            <tr>
+                <td>Pineapple</td>
+                <td>$2.00</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <th>$3.75</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>Table 2: A More Complex Sample Table</h2>
+        <table class="table2" style="width: 80%;">
+            <tr>
+                <th rowspan="2"><img src="{% static 'book.jpg'%}" width="150" height="150"></th>
+                <th colspan="4">Camelid comparison (Approximate as of 6/2011)</th>
+            </tr>
+            <tr>
+                <th># of humps</th>
+                <th>Indigenous region</th>
+                <th>Spits?</th>
+                <th>Produces wool?</th>
+            </tr>
+
+            <tr>
+                <td><b>Dromedary</b></td>
+                <td>1</td>
+                <td>Arabian Peninsula</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td><b>Camels (bactrian)</b></td>
+                <td>2</td>
+                <td>Africa/Asia</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td><b>Llamas</b></td>
+                <td>1</td>
+                <td>Andes Mountains</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+    </div>   
+</body>
+</html>

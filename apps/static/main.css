@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+.link {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+}
+
+#first-link {
+    color: orange;
+    background-color: aquamarine;
+}
+
+#second-link {
+    color: yellow;
+    background-color: gray;   
+}
+
+#third-link {
+    color: white;
+    background-color: black;  
+}
+#first-link:hover, #second-link:hover, #third-link:hover {
+    color: blueviolet;
+}
+
+#first-link:active, #second-link:active, #third-link:active {
+    color: blue;
+}
+
+#first-link:visited, #second-link:visited, #third-link:visited {
+    color: red;
+}
+
+.text-heading {
+    background-color:rgb(215, 248, 215);
+    color: green;
+    padding: 1rem;
+}
