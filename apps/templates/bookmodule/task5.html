@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Task 5 {% endblock title %}
+{% block content %}
+<div>
+    <p>Average Price: {{ query.avg_price }}</p>
+    <p>Total Price: {{ query.sum_price }}</p>
+    <p>Minimum Price: {{ query.min_price }}</p>
+    <p>Maximum Price: {{ query.max_price }}</p>
+    <p>Total Books: {{ query.books_count }}</p>
+</div>
+{% endblock content %}

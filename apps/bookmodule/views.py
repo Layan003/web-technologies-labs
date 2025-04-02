@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Book
-
+from django.db.models import Q, Sum, Count, Avg, Min, Max
 
 def index(request): 
     return render(request, "bookmodule/index.html") 
@@ -82,3 +82,33 @@ def index2(request, val1 = 0):
 #     context = {'book':targetBook}
 #     return render(request, 'bookmodule/show.html', context)
 
+def task1(request):
+    query = Book.objects.all()
+    query = query.filter(Q(price__lte=80))
+    return render(request, 'bookmodule/task1.html', {"books": query})
+
+def task2(request):
+    query = Book.objects.all()
+    query = query.filter(Q(edition__gt=3) & (Q(title__icontains='co') | Q(author__icontains='co')))
+    # query = query.filter(Q(title__icontains='co') | Q(author__icontains='co'))
+    return render(request, 'bookmodule/task2.html', {"books": query})
+
+def task3(request):
+    query = Book.objects.all()
+    query = query.filter(Q(edition__lt=3) & (~Q(title__icontains='co') | ~Q(author__icontains='co')))
+    return render(request, 'bookmodule/task3.html', {"books": query})
+
+
+def task4(request):
+    query = Book.objects.order_by('title')
+    return render(request, 'bookmodule/task4.html', {"books": query})
+
+def task5(request):
+    query = Book.objects.aggregate(
+        avg_price = Avg('price'),
+        sum_price = Sum('price'),
+        min_price = Min('price'),
+        max_price = Max('price'),
+        books_count = Count('id')
+    )
+    return render(request, 'bookmodule/task5.html', {'query': query})

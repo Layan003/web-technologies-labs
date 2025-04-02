@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Task 2 {% endblock title %}
+{% block content %}
+<div>
+    {% for book in books %}
+    <div>
+        <!-- <h1>Id: {{book.id}}</h1> -->
+        <h2>Name: {{book.title}}</h2>
+        <h4>Author: {{book.author}}</h4>
+        <p>Price: {{book.price}}</p>
+        <p>edition: {{book.edition}}</p>
+
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock content %}

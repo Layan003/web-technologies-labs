@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Task 6 {% endblock title %}
+{% block content %}
+<div>
+    <!-- students : {{students_per_city}} -->
+    {% for address in students_per_city %}
+    {{address.city}} - {{address.student_count}}
+    <br>
+    {% endfor %}
+</div>
+{% endblock content %}
